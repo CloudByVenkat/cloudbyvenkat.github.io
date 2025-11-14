@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venkat - Cloud Solutions Architect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .tagline {
+            font-size: 1.3em;
+            opacity: 0.95;
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            background: white;
+            color: #667eea;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .main-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: -30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 25px;
+            border-radius: 15px;
+            color: white;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .skill-card h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .skill-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skill-list li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .skill-list li:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #fff;
+        }
+
+        .experience-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transform: translateX(5px);
+        }
+
+        .experience-item h3 {
+            color: #667eea;
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+
+        .experience-meta {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .cert-badge {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cert-badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            padding: 25px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+        }
+
+        .project-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .tagline {
+                font-size: 1.1em;
+            }
+
+            .main-content {
+                padding: 20px;
+            }
+
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-img">☁️</div>
+            <h1>Venkat</h1>
+            <p class="tagline">Cloud Solutions Architect | Multi-Cloud Expert | DevOps Enthusiast</p>
+            <div class="social-links">
+                <a href="https://github.com/CloudByVenkat" class="social-btn" target="_blank">🔗 GitHub</a>
+                <a href="https://linkedin.com/in/yourprofile" class="social-btn" target="_blank">💼 LinkedIn</a>
+                <a href="mailto:your.email@example.com" class="social-btn">📧 Contact</a>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <section class="section">
+                <h2>About Me</h2>
+                <p style="font-size: 1.1em; line-height: 1.8;">
+                    Passionate Cloud Solutions Architect with extensive experience in designing, implementing, and managing scalable cloud infrastructures across AWS, Azure, and GCP. Specialized in cloud migration strategies, infrastructure automation, and building resilient, cost-effective solutions that drive business transformation.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2>Core Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>☁️ Cloud Platforms</h3>
+                        <ul class="skill-list">
+                            <li>Amazon Web Services (AWS)</li>
+                            <li>Microsoft Azure</li>
+                            <li>Google Cloud Platform</li>
+                            <li>Multi-Cloud Strategy</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h3>🔧 DevOps & Tools</h3>
+                        <ul class="skill-list">
+                            <li>Terraform / CloudFormation</li>
+                            <li>Docker & Kubernetes</li>
+                            <li>CI/CD Pipelines</li>
+                            <li>Jenkins, GitLab CI</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h3>📊 Architecture</h3>
+                        <ul class="skill-list">
+                            <li>Microservices Design</li>
+                            <li>Serverless Computing</li>
+                            <li>High Availability Systems</li>
+                            <li>Disaster Recovery</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h3>🔐 Security & Compliance</h3>
+                        <ul class="skill-list">
+                            <li>Cloud Security Best Practices</li>
+                            <li>IAM & Access Management</li>
+                            <li>Compliance Standards</li>
+                            <li>Security Automation</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Professional Experience</h2>
+                <div class="experience-item">
+                    <h3>Senior Cloud Solutions Architect</h3>
+                    <p class="experience-meta">Company Name | 2021 - Present</p>
+                    <p>Leading cloud transformation initiatives for enterprise clients, designing and implementing multi-cloud architectures that reduced infrastructure costs by 40% while improving system reliability and performance.</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Cloud Engineer</h3>
+                    <p class="experience-meta">Previous Company | 2018 - 2021</p>
+                    <p>Developed and maintained cloud infrastructure using Infrastructure as Code, automated deployment pipelines, and implemented monitoring solutions for mission-critical applications.</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Certifications</h2>
+                <div class="certifications">
+                    <div class="cert-badge">AWS Solutions Architect Professional</div>
+                    <div class="cert-badge">Azure Solutions Architect Expert</div>
+                    <div class="cert-badge">GCP Professional Cloud Architect</div>
+                    <div class="cert-badge">Kubernetes Administrator (CKA)</div>
+                    <div class="cert-badge">Terraform Associate</div>
+                    <div class="cert-badge">AWS DevOps Engineer</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>🚀 Multi-Cloud Migration Platform</h3>
+                        <p>Developed an automated migration tool that streamlines workload transitions between AWS, Azure, and GCP with minimal downtime.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>🛠️ Infrastructure Automation Framework</h3>
+                        <p>Built a comprehensive Terraform framework for provisioning and managing cloud resources across multiple environments.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>📈 Cloud Cost Optimization Tool</h3>
+                        <p>Created a monitoring and recommendation system that identifies cost-saving opportunities and automates resource optimization.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Let's Connect</h2>
+                <p style="font-size: 1.1em;">
+                    I'm always interested in discussing cloud architecture, new technologies, and collaboration opportunities. Feel free to reach out through GitHub or LinkedIn!
+                </p>
+            </section>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Venkat | Cloud Solutions Architect | Built with ❤️ and ☁️</p>
+        </footer>
+    </div>
+</body>
+</html>
